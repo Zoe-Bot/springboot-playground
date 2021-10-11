@@ -1,13 +1,21 @@
 package com.joy.springbootplayground.service;
 
+import java.util.UUID;
+
 import com.joy.springbootplayground.dao.PersonDao;
 import com.joy.springbootplayground.model.Person;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+@Service
 public class PersonService {
     
     private final PersonDao personDao;
     
-    public PersonService(PersonDao personDao) {
+    @Autowired
+    public PersonService(@Qualifier("fakeDao") PersonDao personDao) {
         this.personDao = personDao;
     }
 

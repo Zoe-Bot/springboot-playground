@@ -8,7 +8,7 @@ import com.joy.springbootplayground.model.Person;
 
 import org.springframework.stereotype.Repository;
 
-@Repository
+@Repository("fakeDao")
 public class FakePersonDataAccessService implements PersonDao {
 
     private static List<Person> DB = new ArrayList<>();
